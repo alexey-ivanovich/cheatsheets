@@ -1,0 +1,134 @@
+\documentclass{article}
+
+%Page formatting
+%--------------------------------------
+\usepackage[a4paper, landscape, margin=0.3in]{geometry}
+%--------------------------------------
+
+%Math
+%--------------------------------------
+\usepackage{amsmath}
+\usepackage{amssymb}
+\DeclareMathOperator{\sh}{sh}
+\DeclareMathOperator{\ch}{ch}
+\renewcommand{\th}{\DeclareMathOperator{\th}{th}}
+\DeclareMathOperator{\cth}{cth}
+\DeclareMathOperator{\arsh}{arsh}
+\DeclareMathOperator{\arch}{arch}
+\DeclareMathOperator{\arth}{arth}
+\DeclareMathOperator{\arcth}{arcth}
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\ctg}{ctg}
+%--------------------------------------
+
+%Russian-specific packages
+%--------------------------------------
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+%--------------------------------------
+ 
+%Hyphenation rules
+%--------------------------------------
+\usepackage{hyphenat}
+\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+%--------------------------------------
+
+%Multiply columns
+%--------------------------------------
+\usepackage{wrapfig}
+\renewcommand{\arraystretch}{1.5}
+%--------------------------------------
+
+%Tables
+%--------------------------------------
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{tabularx}
+\setlength{\extrarowheight}{1mm}
+%--------------------------------------
+
+
+\title{производные и дифференциалы}
+\author{Никита Климов}
+\date{August 2019}
+
+\begin{document}
+
+    \begin{multicols}{3}
+
+        \begin{wraptable}{i}{0.7\linewidth}
+            \begin{tabular}{ll}
+            	\multicolumn{2}{c}{Основные правила} \\
+                Отношение & 
+                \begin{math}
+                    \displaystyle \left ( \frac{f}{g} \right )'= \frac{f' \times{g} + f \times{g'}}{g^2}
+                \end{math} \\[0.5mm]
+                Произведение &
+                \begin{math}
+                    \left ( f \times{g} \right )' = f' \times{g} + f \times{g'}
+                \end{math} \\
+                Суперпозиция &
+                \begin{math}
+                    \left (f \left (g \right ) \right )' = f'\left (g \right ) \times{g'}
+                \end{math} \\
+                Сумма и разность &
+                \begin{math}
+                    \left (f \pm g \right )' = f' \pm g'
+                \end{math} \\
+                Пр-е константы и ф-ии &$\left(c\times{f}\right)' = c \times f'$\\
+            \end{tabular}
+        	\begin{tabular}{l|r|l}
+	        	\multicolumn{3}{c}{Экспоненты} \\
+	        	\multirow{2}{*}{$x^a$} & \multirow{2}{*}{$a\times{x^{a-1}}$}& $x > 0$ при $a \in \mathbb{R}$ \\
+	        	&&$x \in \mathbb{R}$ при $a \in \mathbb{N}$ \\\hline
+	        	$a^x$ & $a^x \times{\ln{a}}$ & $x \in \mathbb{R}$ $(a > 0, a \ne 1) $ \\\hline
+	        	$e^x$ & $e^x$ &\\\hline
+	        	$a^{g\left(x\right)}$&$\ln{a}\times{a^{g\left(x\right)}}\times{g'\left(x\right)}$&\\\hline
+	        	$e^{g\left(x\right)}$&$a^{g\left(x\right)}\times{g'\left(x\right)}$&\\
+	        	\multicolumn{3}{c}{Логарифмы} \\
+	        	$\log_a{|x|}$&$\displaystyle \frac{1}{x\times{\ln{a}}}$&$x \in \mathbb{R} \setminus 0$ $(a > 0, a \ne 1)$\\[2mm]\hline
+	        	$\ln{|x|}$&$\displaystyle \frac{1}{x}$&$x \in \mathbb{R} \setminus 0$ $(a > 0, a \ne 1)$\\
+        	\end{tabular}
+        \end{wraptable}
+
+	    \begin{wraptable}{1}{0.7\linewidth}
+			\begin{tabular}{l|r|l}
+                \multicolumn{3}{c}{Тригонометрические ф-ии}\\
+				$\sin{x}$&$\cos{x}$&\\\hline
+				$\cos{x}$&$-\sin{x}$&\\\hline
+				$\tg{x}$&$\displaystyle \frac{1}{cos^2{x}}$&$\displaystyle x \ne \frac{\pi}{2} + \pi\times{k}$, $k \in \mathbb{Z}$\\[2mm]\hline
+				$\ctg{x}$&$\displaystyle - \frac{1}{\sin^2{x}}$&$x \ne \pi\times{k}$, $k \in \mathbb{Z}$\\
+				\multicolumn{3}{c}{Обратные тригонометрические ф-ии}\\
+				$\arcsin{x}$&$\displaystyle \frac{1}{\sqrt{1-x^2}}$&$|x| < 1$\\[2mm]\hline
+				$\arccos{x}$&$\displaystyle -\frac{1}{1-x^2}$&$|x| < 1$\\[2mm]\hline
+				$\arctg{x}$&$\displaystyle \frac{1}{1+x^2}$&\\[2mm]\hline
+				$\arcctg{x}$&$\displaystyle -\frac{1}{1+x^2}$&\\		
+			\end{tabular}
+		\end{wraptable}
+    	\begin{wraptable}{1}{0.7\linewidth}
+    		\begin{tabular}{lrl}
+		
+    		\end{tabular}
+    	\end{wraptable}
+    	\begin{wraptable}{1}{0.7\linewidth}
+    		\begin{tabular}{l|r|l}
+                \multicolumn{3}{c}{Гиперболические ф-ции}\\
+				$\sh{x}$&$\ch{x}$&\\\hline
+				$\ch{x}$&$\sh{x}$&\\\hline
+				$\th{x}$&$\displaystyle \frac{1}{\ch^2{x}}$&\\[2mm]\hline
+				$\cth{x}$&$\displaystyle -\frac{1}{\sh^2{x}}$&$x \ne 0$\\
+				\multicolumn{3}{c}{Обратные гиперболические ф-ции}\\
+				$\arsh{x} = \ln{(x+\sqrt{q+x^2})}$&$\displaystyle \frac{1}{\sqrt{1+x^2}}$&\\[2mm]\hline
+				$\arch{x} = \ln{(x \pm \sqrt{x^2-1})}$&$\displaystyle \pm \frac{1}{\sqrt{x^2-1}}$&$|x|>1$\\[2mm]\hline
+				$\displaystyle \arth{x} = \frac{1}{2}\times{\ln{\frac{1+x}{1-x}}}$&$\displaystyle \frac{1}{1-x^2}$&$|x|<1$\\[2mm]\hline
+				$\displaystyle \arcth{x} = \frac{1}{2}\times{\ln{\frac{x+1}{x-1}}}$&$\displaystyle \frac{1}{1-x^2}$&\\[2mm]
+    		\end{tabular}
+    	\end{wraptable}
+    	\begin{wraptable}{1}{0.7\linewidth}
+    		\begin{tabular}{lrl}
+
+    		\end{tabular}
+    	\end{wraptable}
+    \end{multicols}
+\end{document}
